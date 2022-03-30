@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:test/screens/home.dart';
-// import 'package:flutter/cupertino.dart'; APPLE
 
 void main() {
   runApp(const MyApp());
@@ -9,15 +8,16 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Flutter',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        scaffoldBackgroundColor: Colors.grey,
+        primarySwatch: Colors.grey,
       ),
-      home: const MyHomePage(),
+      debugShowCheckedModeBanner: false,
+      home: const MyHomePage(title: 'Flutter'),
     );
   }
 }

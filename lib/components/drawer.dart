@@ -1,87 +1,102 @@
 import 'package:flutter/material.dart';
-import 'package:test/screens/exercice4.dart';
-import 'package:test/screens/exercice3.dart';
-import 'package:test/screens/exercice2.dart';
-import 'package:test/screens/exercice1.dart';
 
-class MyDrawer extends StatefulWidget {
-  @override
-  State<StatefulWidget> createState() {
-    return MyDrawerState();
-  }
-}
+class CustomDrawer extends StatelessWidget {
+  const CustomDrawer({
+    Key? key,
+  }) : super(key: key);
 
-class MyDrawerState extends State<MyDrawer> {
-  int selectedIndex = 0;
-  Widget _Exercice4 = Exercice4();
-  Widget _Exercice3 = Exercice3();
-  Widget _Exercice2 = Exercice2();
-  Widget _Exercice1 = Exercice1();
   @override
   Widget build(BuildContext context) {
     return Drawer(
-        child: ListView(
-      padding: EdgeInsets.zero,
-      children: <Widget>[
-        DrawerHeader(
-          decoration: const BoxDecoration(
-              color: Colors.red,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Container(
+            decoration: const BoxDecoration(
               image: DecorationImage(
-                  image: AssetImage("assets/bg-header.jpg"),
-                  fit: BoxFit.cover)),
-          child: Row(
-            // ignore: prefer_const_literals_to_create_immutables
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              const Text('Flutter',
-                  style: TextStyle(
-                    color: Colors.white,
-                  )),
-              IconButton(
-                icon: const Icon(Icons.close),
-                onPressed: () {
-                  Navigator.pop(context);
-                },
+                image: NetworkImage(
+                  'https://images.unsplash.com/photo-1647436929276-43fa809c907c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=930&q=80',
+                ),
+                fit: BoxFit.cover,
               ),
-            ],
+            ),
+            height: 150,
+            child: Padding(
+              padding:
+                  const EdgeInsets.symmetric(vertical: 50, horizontal: 25),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  const Text(
+                    'Flutter',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 30,
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.of(context).pop();
+                    },
+                    child: const Icon(
+                      Icons.close,
+                      size: 28,
+                      color: Colors.white,
+                    ),
+                  )
+                ],
+              ),
+            ),
           ),
-        ),
-        Column(
-          children: [
-            ListTile(
-              title: const Text('Item 1'),
-              onTap: () {
-                onTapHandler(0);
-                Navigator.pop(context);
-              },
+          const Padding(
+            padding: EdgeInsets.symmetric(vertical: 20, horizontal: 25),
+            child: Text(
+              'Item 1',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 20,
+              ),
             ),
-            ListTile(
-              title: const Text('Item 2'),
-              onTap: () {
-                this.onTapHandler(1);
-                Navigator.pop(context);
-              },
+          ),
+          const Padding(
+            padding: EdgeInsets.symmetric(vertical: 20, horizontal: 25),
+            child: Text(
+              'Item 1',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 20,
+              ),
             ),
-          ],
-        ),
-        Text('data'),
-      ],
-    ));
-  }
-
-  Widget getBody() {
-    if (selectedIndex == 0) {
-      return _Exercice1;
-    } else if (selectedIndex == 1) {
-      return _Exercice2;
-    } else {
-      return _Exercice4;
-    }
-  }
-
-  void onTapHandler(int index) {
-    setState(() {
-      selectedIndex = index;
-    });
+          ),
+          const Padding(
+            padding: EdgeInsets.symmetric(vertical: 20, horizontal: 25),
+            child: Text(
+              'Item 1',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 20,
+              ),
+            ),
+          ),
+          const Expanded(
+            child: Align(
+              alignment: FractionalOffset.bottomLeft,
+              child: Padding(
+                padding: EdgeInsets.symmetric(vertical: 40, horizontal: 25),
+                child: Text(
+                  'Sign Out',
+                  style: TextStyle(
+                    color: Colors.red,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
   }
 }
