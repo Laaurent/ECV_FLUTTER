@@ -3,6 +3,7 @@ import 'package:test/components/carousel/index.dart';
 import 'package:test/components/drawer.dart';
 import 'package:test/components/exercices/exercice_1.dart';
 import 'package:test/components/exercices/exercice_2.dart';
+import 'package:test/components/exercices/exercice7.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key, required this.title}) : super(key: key);
@@ -16,11 +17,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   int index = 0;
 
-  List<Widget> list = [
-    const Exercice1(),
-    const Exercice2(),
-    const CarouselImages()
-  ];
+  List<Widget> list = [const Exercice7(), const CarouselImages()];
 
   @override
   Widget build(BuildContext context) {
@@ -45,9 +42,8 @@ class _MyHomePageState extends State<MyHomePage> {
         selectedItemColor: Colors.black,
         iconSize: 48,
         items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-          BottomNavigationBarItem(icon: Icon(Icons.list), label: 'List'),
-          BottomNavigationBarItem(icon: Icon(Icons.person), label: 'User'),
+          BottomNavigationBarItem(icon: Icon(Icons.person), label: 'List'),
+          BottomNavigationBarItem(icon: Icon(Icons.list), label: 'User'),
         ],
       ),
     );

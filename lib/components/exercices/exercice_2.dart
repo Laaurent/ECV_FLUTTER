@@ -8,9 +8,7 @@ class Exercice2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(
-        vertical: 15
-      ),
+      padding: const EdgeInsets.symmetric(vertical: 15),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -18,7 +16,7 @@ class Exercice2 extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Container(
-                color: Colors.blue,
+                color: Colors.red,
                 height: 50,
                 width: 50,
               ),
