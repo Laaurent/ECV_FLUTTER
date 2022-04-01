@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:test/components/carousel/index.dart';
 import 'package:test/components/drawer.dart';
 import 'package:test/components/exercices/exercice_1.dart';
 import 'package:test/components/exercices/exercice_2.dart';
 import 'package:test/components/exercices/exercice7.dart';
+import 'package:test/components/exercices/exercice8.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key, required this.title}) : super(key: key);
@@ -17,7 +17,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   int index = 0;
 
-  List<Widget> list = [const Exercice7(), const CarouselImages()];
+  List<Widget> list = [const Exercice7(), const Exercice8()];
 
   @override
   Widget build(BuildContext context) {

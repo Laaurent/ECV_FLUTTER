@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 
-class CarouselImages extends StatefulWidget {
-  const CarouselImages({
+class Exercice8 extends StatefulWidget {
+  const Exercice8({
     Key? key,
   }) : super(key: key);
 
   @override
-  _CarouselImagesState createState() => _CarouselImagesState();
+  _Exercice8State createState() => _Exercice8State();
 }
 
-class _CarouselImagesState extends State<CarouselImages> {
+class _Exercice8State extends State<Exercice8> {
   int currentIndex = 0;
 
   List<String> list = [
